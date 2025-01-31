@@ -10,6 +10,16 @@
             "username": "postgres",
             "password": "010206",
             "connectionTimeout": 30
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Exercicio1",
+            "database": "Exercicio1",
+            "password": "010206",
+            "username": "postgres"
         }
     ]
 }

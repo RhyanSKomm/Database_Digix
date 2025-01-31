@@ -25,9 +25,11 @@ insert into usuario values (2,'Maria','ma@gmail.com');
 insert into usuario values (3,'fulano','ma@gmail.com');
 
 alter table cargo add column salario decimal(10,2);
-insert into cargo values (1,'Analista', 1, 5000.00);
-insert into cargo values (2,'Analista', 1, 5000.00);
-insert into cargo values (3,'Analista', 2, 5000.00);
+insert into cargo values (1,'Analista Junior', 1, 5000.00);
+insert into cargo values (2,'Analista Senior', 1, 5000.00);
+insert into cargo values (3,'Analista Pleno', 2, 5000.00);
+
+drop table cargo;
 
 update cargo set salario = 6500 where id=1; 
 update usuario set nome = 'ciclano' where id = 1;
