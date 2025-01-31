@@ -123,6 +123,9 @@ inner join maquinas m on m.id_maquina = c.id_maquina;
 select m.hard_disk / s.hard_disk from contem c
 inner join software s on s.id_software = c.id_software
 inner join maquinas m on m.id_maquina = c.id_maquina;
+--16 Correção
+select avg(hard_disk) from software;
+
 
 --17
 select count(m.id_maquina) from maquinas m group by m.tipo;
