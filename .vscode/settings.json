@@ -20,6 +20,30 @@
             "database": "Exercicio1",
             "password": "010206",
             "username": "postgres"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Aula3",
+            "database": "Aula3",
+            "username": "postgres",
+            "password": "010206"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "teste",
+            "database": "teste",
+            "username": "root",
+            "password": "010206"
         }
     ]
 }
