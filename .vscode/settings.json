@@ -40,8 +40,22 @@
             "server": "localhost",
             "port": 3306,
             "driver": "MySQL",
-            "name": "teste",
-            "database": "teste",
+            "name": "1_sql",
+            "database": "escola",
+            "username": "root",
+            "password": "010206"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "exe2",
+            "database": "cinema",
             "username": "root",
             "password": "010206"
         }
