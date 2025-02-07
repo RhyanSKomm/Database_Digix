@@ -126,9 +126,7 @@ inner join turma t on idturma = turma_idturma
 group by t.nome;
 
 --3
-select avg(a.turma_idturma) as media_alunos_por_turma, datediff(t.dataFim, t.dataInicio) as duracao_turma from aluno a
-inner join turma t on idturma = turma_idturma
-group by t.nome, t.dataInicio, t.dataFim;
+select avg(datediff(now(), a.dataNascimento) / 365) as media_idade from aluno a;
 
 --4
 select t.nome from aluno a
