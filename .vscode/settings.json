@@ -58,6 +58,20 @@
             "database": "cinema",
             "username": "root",
             "password": "010206"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default",
+                "enableSsl": "Disabled"
+            },
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 3306,
+            "driver": "MySQL",
+            "name": "ex3",
+            "database": "escola",
+            "username": "root",
+            "password": "010206"
         }
     ]
 }

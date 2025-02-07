@@ -259,7 +259,7 @@ inner join funcao ff on ff.idFuncao = htf.funcao_idFuncao
 group by ff.nome;
 
 --13
-select f.nomeBR
+select f.nomeBR, s.nome, s.capacidade
 from filme_exibido_sala fes
 inner join filme f on f.idFilme = fes.filme_idFilme
 inner join sala s on s.idSala = fes.sala_idSala
@@ -269,6 +269,6 @@ where s.capacidade > (select AVG(s.capacidade) from sala s);
 select f.salario * 12 as SalarioAnual, f.nome from funcionario f;
 
 --15
-select s.capacidade, count(fes.filme_idFilme) as QuantidadeFilmes from sala s
+select s.nome as sala, s.capacidade, count(fes.filme_idFilme) as QuantidadeFilmes, count(fes.filme_idfilme)/nullif(s.capacidade, 0) as FilmePorCapacidade from sala s
 inner join filme_exibido_sala fes on s.idSala = fes.sala_idSala
 group by s.idSala, s.capacidade;
