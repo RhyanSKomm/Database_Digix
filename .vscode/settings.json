@@ -100,6 +100,26 @@
             "database": "futebol",
             "username": "root",
             "password": "010206"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "aula6",
+            "database": "Aula6",
+            "username": "postgres",
+            "password": "010206"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "ex6",
+            "database": "ex6",
+            "username": "postgres",
+            "password": "010206"
         }
     ]
 }
