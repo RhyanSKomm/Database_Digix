@@ -172,13 +172,19 @@ declare
     sal float;
 begin
     begin
-    select Salario into sal from Empregado where CPF = cpfpk;
-    exception
-        when no_data_found then
+        select Salario into sal from Empregado where CPF = cpfpk;
+        
+        if salario is null then
             raise notice 'Empregado não encontrado';
+        end if;
+    exception
+        when others then
+            raise notice 'Erro ao buscar salario';
     end;
     return sal;
 end;
 $$ language plpgsql;
 
 select salarioEmpregado(11423);
+
+drop
