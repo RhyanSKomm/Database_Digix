@@ -124,6 +124,63 @@ $$ language plpgsql;
 SELECT * from  Media_Recursos()
 
 --7
-create or replace procedure Diagnostico_Maquina(u_id) as $$
+create or replace procedure Diagnostico_Maquina(Id_Maquina1 integer) as $$
 declare
+    Total_Ram_Requerida integer;
+    Total_HardDisk_Requerido integer;
+    HardDisk_Atual integer;
+    Ram_Atual integer;
+    Ram_Upgrade integer;
+    HardDisk_Upgrade integer;
+begin
+    select
+        coalesce(sum(Memoria_Ram), 0),
+        coalesce(sum(HardDisk), 0)
+    into
+        Total_Ram_Requerida,
+        Total_HardDisk_Requerido
+    from 
+        Software s
+    where
+        fk_maquina = Id_Maquina1;
     
+
+    select
+        Memoria_Ram,
+        HardDisk
+    into
+        Ram_Atual,
+        HardDisk_Atual
+    from
+        Maquina
+    where
+        Id_Maquina = id_maquina1;
+
+    if not found then
+        raise notice 'Maquina não encontrada';
+    end if;
+
+    if Ram_Atual >= Total_HardDisk_Requerido and HardDisk_Atual >= Total_HardDisk_Requerido then
+        raise notice 'Maquina % tem recursos suficientes e não precisa de upgrade', Id_Maquina1;
+        else 
+            Ram_Upgrade := greatest(0, Total_Ram_Requerida - Ram_Atual);
+            HardDisk_Upgrade := greatest(0, Total_HardDisk_Requerido - HardDisk_Atual);
+
+            raise notice 'Maquina % precisa de upgrade',Id_Maquina1;
+
+            if Ram_Upgrade > 0 then
+                raise notice 'Upgrade de % GB de memoria RAM', Ram_Upgrade;
+            end if;
+
+            if HardDisk_Upgrade > 0 then
+                raise notice 'Upgrade de % GB de HardDisk', HardDisk_Upgrade;
+            end if;
+    end if;
+end;
+$$ language plpgsql;
+    
+
+drop procedure Diagnostico_Maquina;
+call Diagnostico_Maquina(2);
+
+create database trigger;

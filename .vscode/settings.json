@@ -130,6 +130,26 @@
             "database": "Aula7",
             "username": "postgres",
             "password": "010206"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "Aula8",
+            "database": "trigger",
+            "username": "postgres",
+            "password": "010206"
+        },
+        {
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 5432,
+            "driver": "PostgreSQL",
+            "name": "ex8",
+            "database": "ex8",
+            "username": "postgres",
+            "password": "010206"
         }
     ]
 }
