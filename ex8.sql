@@ -235,3 +235,5 @@ for each row
 execute procedure impedir_exclusao_software();
 
 delete from Software where Id_Software = 3;
+
+create database DesafioBD
